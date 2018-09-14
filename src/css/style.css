@@ -1,0 +1,27 @@
+html {
+	font-size: 62.5%;/* 10px */
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 3.2rem;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 2.4rem;
+	font-weight: bold;
+}
+
+fieldset {
+	margin-bottom: 1em;
+}
+
+.o-form-row {
+	margin-bottom: 1em;
+}

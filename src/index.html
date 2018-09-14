@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="nl-nl">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>Conditional fieldsets</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/conditional-fieldsets.css">
+</head>
+<body>
+	
+	<form action="#" method="post">
+
+		<fieldset>
+			<legend class="h4">1. Personal details</legend>
+		
+			<div class="o-form-row">
+				<label for="personal-details-first-name">
+					First name<span class="required">*</span>
+				</label>
+				<input type="text" id="personal-details-first-name" name="personal-details-first-name" placeholder="Jan" required>
+				<span class="validation-mark"></span>
+			</div>
+			
+			<div class="o-form-row">
+				<label for="personal-details-address">
+					Address<span class="required">*</span>
+				</label>
+				<input type="text" id="personal-details-address" name="personal-details-address" required placeholder="Spatbordweg 12">
+				<span class="validation-mark"></span>
+			</div>
+		
+		</fieldset>
+
+
+
+
+		<fieldset>
+			<legend>2. Choose a delivery option</legend>
+			<div class="o-form-row">
+		
+				<input type="radio"
+					id="delivery-dealer"
+					class="o-radio-card" 
+					name="delivery-method"
+					data-has-conditional-fieldset 
+					data-conditional-fieldset-id="1"
+					data-conditional-group-id="delivery-options"
+					required>
+				<label for="delivery-dealer" class="o-radio-card-label">Pick up at dealer</label>
+		
+				<input type="radio"
+					id="delivery-at-home"
+					class="o-radio-card"
+					name="delivery-method"
+					data-has-conditional-fieldset
+					data-conditional-fieldset-id="2"
+					data-conditional-group-id="delivery-options"
+					required>
+				<label for="delivery-at-home" class="o-radio-card-label">Deliver at home</label>
+		
+			</div>
+		
+		
+			<!-- Start pick a dealer -->
+		
+				<fieldset class="delivery-details o-conditional-fieldset o-conditional-fieldset--is-hidden" 
+					data-conditional-fieldset
+					data-conditional-fieldset-id="1">
+					<legend class="h5">Select a dealer</legend>
+		
+					<div class="o-form-row">
+						<label for="pick-dealer-postal-code-or-city">
+							Postal code or city
+						</label>
+						<input type="text" id="pick-dealer-postal-code-or-city" name="pick-dealer-postal-code-or-city" placeholder="Bijv. 3972XX of Driebergen">
+					</div>
+				</fieldset>
+		
+			<!-- End pick a dealer -->
+		
+			<!-- Start Deliver at home -->
+		
+				<fieldset class="delivery-details o-conditional-fieldset o-conditional-fieldset--is-hidden" 
+					data-conditional-fieldset
+					data-conditional-fieldset-id="2">
+					<legend class="h5">Select delivery address</legend>
+		
+					<div class="o-form-row">
+						<input type="checkbox"
+							id="use-same-address"
+							data-has-conditional-fieldset
+							data-conditional-fieldset-id="2.1"
+							data-conditional-inverse="true"
+							checked>
+						<label for="use-same-address">The delivery address is the same as the address above</label>
+					</div>
+		
+					<div id="delivery-address"
+						class="delivery-address o-conditional-fieldset o-conditional-fieldset--is-hidden"
+						data-conditional-fieldset
+						data-conditional-fieldset-id="2.1">
+		
+						<div class="o-form-row">
+							<label for="delivery-details-first-name">
+								First name<span class="required">*</span>
+							</label>
+							<input type="text" id="delivery-details-first-name" name="delivery-details-first-name" placeholder="Jan" required>
+							<span class="validation-mark"></span>
+						</div>
+						
+						<div class="o-form-row">
+							<label for="delivery-details-last-name">
+								Last name<span class="required">*</span>
+							</label>
+							<input type="text" id="delivery-details-last-name" name="delivery-details-last-name" placeholder="Klaassen" required>
+							<span class="validation-mark"></span>
+						</div>
+					</div>
+		
+				</fieldset><!-- deliver at home -->
+		
+			<!-- End Deliver at home -->
+		
+			<input class="btn" type="submit" value="check form validation">
+		
+		</fieldset>
+		
+		<fieldset>
+			<div class="o-form-row">
+				<input type="checkbox"
+					id="use-same-address"
+					data-has-conditional-fieldset
+					data-conditional-fieldset-id="3">
+				<label for="use-same-address">I want to fill in more fields</label>
+			</div>
+
+			<fieldset class="o-conditional-fieldset o-conditional-fieldset--is-hidden" 
+				data-conditional-fieldset
+				data-conditional-fieldset-id="3">
+				<legend class="h5">Select delivery address</legend>
+	
+				<div class="o-form-row">
+					<label for="delivery-details-last-name">
+						Last name<span class="required">*</span>
+					</label>
+					<input type="text" id="delivery-details-last-name" name="delivery-details-last-name" placeholder="Klaassen" required>
+					<span class="validation-mark"></span>
+				</div>
+	
+			</fieldset><!-- deliver at home -->
+		</fieldset>
+
+	</form>
+
+
+	<!-- <script src="js/main.js"></script> -->
+	<script src="js/conditional-fieldsets.js"></script>
+</body>
+</html>

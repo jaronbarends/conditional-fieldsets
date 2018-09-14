@@ -1,0 +1,17 @@
+.o-conditional-fieldset {
+	overflow: hidden;
+	padding: 0;
+	max-height: 100em;
+	opacity: 1;
+	transition-duration: 0.4s;
+	transition-property: max-height, opacity;
+	transition-delay: 0.4s;
+}
+
+.o-conditional-fieldset--is-hidden {
+	margin-bottom: 0;
+	max-height: 0;
+	opacity: 0;
+	/* opacity: 0.5; */
+	transition-delay: 0s;
+}
